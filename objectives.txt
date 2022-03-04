@@ -1,0 +1,11 @@
+delete food/nomenclature -MM
+create cycle 2 -MM
+change segment behavior - MM
+modify collision - a
+
+add sound class - ce
+
+add segment count - jw
+
+copy code -we
+read me -we
