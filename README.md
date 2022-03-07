@@ -3,7 +3,7 @@
 ## Status: in progress
 
 ## Description:
-- Cycle is a game where the players try to cut each other off using cycles that leave a trail behind them.
+- Cycle is a game where the players try to cut each other off using cycles that leave a trail behind them. The game continues until a player collides with their opponents trail. This project was created for CSE 210 at BYU Idaho.
 
 ## Project Structure:
 
