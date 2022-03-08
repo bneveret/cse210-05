@@ -58,26 +58,25 @@ class HandleCollisionsAction(Action):
         cycle1 = cast.get_first_actor("cycles1")
         head1 = cycle1.get_segments()[0]
         segments1 = cycle1.get_segments()[1:]
-        cycle2 = cast.get_first_actor("cycle2s")
+        cycle2 = cast.get_first_actor("cycles2")
         head2 = cycle2.get_segments() [0]
-        segments2 = cycle2.get_segmnts()[1:]
+        segments2 = cycle2.get_segments()[1:]
         
         for segment in segments1:
             if head1.get_position().equals(segment.get_position()):
-                self._is_game_over = True
-            
-        else:
-            cycle1.grow_trail(1)
-
-        for segment2 in segments2:
-            if head2.get_position().equals(segment2.get_position()):
+                self._is_game_over = True           
+        for segment in segments2:
+            if head2.get_position().equals(segment.get_position()):
                 self._is_game_over = True
         for segment in segments1:
             if head2.get_position().equals(segment.get_position()):
                 self._is_game_over = True
-        for segment2 in segments2:
-            if head1.get_position().equals(segment2.get_position()):
-                self._is_game_over = True                        
+        for segment in segments2:
+            if head1.get_position().equals(segment.get_position()):
+                self._is_game_over = True  
+        else:
+            cycle1.grow_trail(1)
+            cycle2.grow_trail(1)                      
         
     def _handle_game_over(self, cast):
         """Shows the 'game over' message and turns the cycle1 and food white if the game is over.
@@ -87,8 +86,10 @@ class HandleCollisionsAction(Action):
         """
         if self._is_game_over:
             cycle1 = cast.get_first_actor("cycles1")
-            segments = cycle1.get_segments()
-            food = cast.get_first_actor("foods")
+            segments1 = cycle1.get_segments()
+            cycle2 = cast.get_first_actor("cycles2")
+            segments2 = cycle2.get_segments()
+            # food = cast.get_first_actor("foods")
 
             x = int(constants.MAX_X / 2)
             y = int(constants.MAX_Y / 2)
@@ -99,6 +100,8 @@ class HandleCollisionsAction(Action):
             message.set_position(position)
             cast.add_actor("messages", message)
 
-            for segment in segments:
+            for segment in segments1:
                 segment.set_color(constants.WHITE)
-            food.set_color(constants.WHITE)
+            for segment in segments2:
+                segment.set_color(constants.WHITE)
+            # food.set_color(constants.WHITE)

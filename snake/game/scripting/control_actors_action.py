@@ -31,42 +31,49 @@ class ControlActorsAction(Action):
         """
         cycle1 = cast.get_first_actor("cycles1")
         cycle2 = cast.get_first_actor("cycles2")
-        if cycle1: 
-            # left
-            if self._keyboard_service.is_key_down('a'):
-                self._direction = Point(-constants.CELL_SIZE, 0)
-            
-            # right
-            if self._keyboard_service.is_key_down('d'):
-                self._direction = Point(constants.CELL_SIZE, 0)
-            
-            # up
-            if self._keyboard_service.is_key_down('w'):
-                self._direction = Point(0, -constants.CELL_SIZE)
-            
-            # down
-            if self._keyboard_service.is_key_down('s'):
-                self._direction = Point(0, constants.CELL_SIZE)
-            
-            
+
+        # left
+        if self._keyboard_service.is_key_down('a'):
+            self._direction = Point(-constants.CELL_SIZE, 0)
             cycle1.turn_head(self._direction)
+        
+        # right
+        if self._keyboard_service.is_key_down('d'):
+            self._direction = Point(constants.CELL_SIZE, 0)
+            cycle1.turn_head(self._direction)
+        
+        # up
+        if self._keyboard_service.is_key_down('w'):
+            self._direction = Point(0, -constants.CELL_SIZE)
+            cycle1.turn_head(self._direction)
+        
+        # down
+        if self._keyboard_service.is_key_down('s'):
+            self._direction = Point(0, constants.CELL_SIZE)
+            cycle1.turn_head(self._direction)
+            
+            
+            
 
-        if cycle2:
-            # left
-            if self._keyboard_service.is_key_down('j'):
-                self._direction = Point(-constants.CELL_SIZE, 0)
-            
-            # right
-            if self._keyboard_service.is_key_down('l'):
-                self._direction = Point(constants.CELL_SIZE, 0)
-            
-            # up
-            if self._keyboard_service.is_key_down('i'):
-                self._direction = Point(0, -constants.CELL_SIZE)
-            
-            # down
-            if self._keyboard_service.is_key_down('k'):
-                self._direction = Point(0, constants.CELL_SIZE)
-            
-
+       # left
+        if self._keyboard_service.is_key_down('j'):
+            self._direction = Point(-constants.CELL_SIZE, 0)
             cycle2.turn_head(self._direction)
+        
+        # right
+        if self._keyboard_service.is_key_down('l'):
+            self._direction = Point(constants.CELL_SIZE, 0)
+            cycle2.turn_head(self._direction)
+        
+        # up
+        if self._keyboard_service.is_key_down('i'):
+            self._direction = Point(0, -constants.CELL_SIZE)
+            cycle2.turn_head(self._direction)
+        
+        # down
+        if self._keyboard_service.is_key_down('k'):
+            self._direction = Point(0, constants.CELL_SIZE)
+            cycle2.turn_head(self._direction)
+        
+
+        
