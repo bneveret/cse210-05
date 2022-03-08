@@ -14,3 +14,5 @@ WHITE = Color(255, 255, 255)
 RED = Color(255, 0, 0)
 YELLOW = Color(255, 255, 0)
 GREEN = Color(0, 255, 0)
+SCORE_X = 350 # x component for where score is displayed
+SCORE_Y = 5 # y component for where score is displayed
