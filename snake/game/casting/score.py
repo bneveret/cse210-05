@@ -1,6 +1,5 @@
 from game.casting.actor import Actor
 from game.shared.point import Point
-from game.casting.cycle1 import Cycle1
 import constants
 
 class Score(Actor):
@@ -17,11 +16,12 @@ class Score(Actor):
         super().__init__()
         # self._points = 0
         # self.add_points(0)
-        cycle1 = Cycle1()  # added
-        self._segment_count = len(cycle1.get_segments())  # Gets the length of the segment list
-        self.update_seg_count(self._segment_count)
+        # cast = Cast()
+        # cycle1 = cast.get_actors("cycles1")  # added
+        # self._segment_count = len(cycle1)  # Gets the length of the segment list
+        # self.update_seg_count(self._segment_count)
         # self.add_points(self._segment_count) # Sets up initial segment count
-        print(f"count at end of Score's __init__ is {self._segment_count}")  # for debugging
+        # print(f"count at end of Score's __init__ is {self._segment_count}")  # for debugging
 
         position = Point(constants.SCORE_X, constants.SCORE_Y)  # Import location of score from Constants file
         self.set_position(position) # Set the position of the score

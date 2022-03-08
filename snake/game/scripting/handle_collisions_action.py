@@ -55,6 +55,7 @@ class HandleCollisionsAction(Action):
         Args:
             cast (Cast): The cast of Actors in the game.
         """
+        score = cast.get_first_actor("scores")
         cycle1 = cast.get_first_actor("cycles1")
         head1 = cycle1.get_segments()[0]
         segments1 = cycle1.get_segments()[1:]
@@ -76,8 +77,13 @@ class HandleCollisionsAction(Action):
                 self._is_game_over = True  
         else:
             cycle1.grow_trail(1)
-            cycle2.grow_trail(1)                      
-        
+            cycle2.grow_trail(1)
+            seg_count = len(segments1)
+            score.update_seg_count(seg_count)
+                    
+
+
+
     def _handle_game_over(self, cast):
         """Shows the 'game over' message and turns the cycle1 and food white if the game is over.
         
