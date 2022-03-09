@@ -13,6 +13,7 @@
 - directing: a folder containing the files to direct the game including director.py.
 - services: a folder containing the files that show and receive information from the user.
 - shared: a folder containing the utility files for the any class to use in the game.
+- sounds: a folder containing the sound files.
 - director.py: a file containing all info relating to the "Director" class.
 - keyboard_service.py: a file that intereprets user's keyboard input using the "KeyboardService" class.
 - video_service.py: a file that draws the game window and shows the user any information they need using the "VideoService" class.
@@ -28,6 +29,8 @@
 - draw_actors_action.py: a file containing all info relating to the "Draw_Actors_Action" class.
 - handle_collisions_action.py: a file containing all info relating to the "Handle_Collisions_Action" class.
 - move_actors_action.py: a file containing all info relating to the "Move_Actors_Action" class.
+- lose_sound.wav: a sound file for when a player loses.
+- player_sound.wav: a sound file for when a player turns.
 
 ## Technologies Used:
 - The only software required for this program is Python. You can download it here: https://www.python.org
