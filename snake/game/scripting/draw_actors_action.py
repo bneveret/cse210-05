@@ -27,7 +27,6 @@ class DrawActorsAction(Action):
             script (Script): The script of Actions in the game.
         """
         score = cast.get_first_actor("scores")
-        # food = cast.get_first_actor("foods")
         cycle1 = cast.get_first_actor("cycles1")
         segments1 = cycle1.get_segments()
         cycle2 = cast.get_first_actor("cycles2")
@@ -35,7 +34,6 @@ class DrawActorsAction(Action):
         messages = cast.get_actors("messages")
 
         self._video_service.clear_buffer()
-        # self._video_service.draw_actor(food)
         self._video_service.draw_actors(segments1)
         self._video_service.draw_actors(segments2)
         self._video_service.draw_actor(score)
