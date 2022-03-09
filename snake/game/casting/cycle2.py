@@ -1,6 +1,5 @@
 import constants
 from game.casting.actor import Actor
-from game.casting.score import Score  # Added this
 from game.shared.point import Point
 
 
@@ -48,10 +47,6 @@ class Cycle2(Actor):
             segment.set_text("#")
             segment.set_color(constants.BLUE)
             self._segments.append(segment)
-
-        # score = Score()  # setup score to use below
-        # self._seg_count = len(self.get_segments())  # segment count is the length of the segments list
-        # score.update_seg_count(self._seg_count)  # use Score's update_seg_count method to update segment that is displayed
 
     def turn_head(self, velocity):
         self._segments[0].set_velocity(velocity)

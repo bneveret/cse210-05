@@ -78,10 +78,9 @@ class HandleCollisionsAction(Action):
         else:
             cycle1.grow_trail(1)
             cycle2.grow_trail(1)
-            seg_count = len(segments1)
-            score.update_seg_count(seg_count)
+            seg_count = len(segments1) # get the length of segments for cycle 1
+            score.update_seg_count(seg_count) # send the length of of segments to Score class to update the segments created that is shown on the screen
                     
-
 
 
     def _handle_game_over(self, cast):
