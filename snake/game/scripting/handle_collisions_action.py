@@ -2,6 +2,11 @@ import constants
 from game.casting.actor import Actor
 from game.scripting.action import Action
 from game.shared.point import Point
+import raylib
+
+# #encode file to be read by raylib
+sound = raylib.LoadSound("snake\game\sounds\lose_sound.wav".encode('ascii'))
+
 
 class HandleCollisionsAction(Action):
     """
@@ -104,6 +109,9 @@ class HandleCollisionsAction(Action):
             message.set_text("Game Over!")
             message.set_position(position)
             cast.add_actor("messages", message)
+            
+            #play sound
+            raylib.PlaySound(sound)
 
             for segment in segments1:
                 segment.set_color(constants.WHITE)
