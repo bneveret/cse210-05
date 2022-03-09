@@ -31,27 +31,8 @@ class HandleCollisionsAction(Action):
             script (Script): The script of Actions in the game.
         """
         if not self._is_game_over:
-            # self._handle_food_collision(cast)
             self._handle_segment_collision(cast)
             self._handle_game_over(cast)
-
-    def _handle_food_collision(self, cast):
-        """Updates the score nd moves the food if the cycle1 collides with the food.
-        
-        Args:
-            cast (Cast): The cast of Actors in the game.
-        """
-        food = cast.get_first_actor("foods")
-        cycle1 = cast.get_first_actor("cycles1")
-        head1 = cycle1.get_head()
-        cycle2 = cast.get_first_actor("cycles2")
-        head2 = cycle2.get_head()
-
-        if not head1.get_position().equals(food.get_position()):
-            cycle1.grow_trail(1)
-        
-        if not head2.get_position().equals(food.get_position()):
-            cycle2.grow_trail(1)
 
     
     def _handle_segment_collision(self, cast):
@@ -83,8 +64,8 @@ class HandleCollisionsAction(Action):
         else:
             cycle1.grow_trail(1)
             cycle2.grow_trail(1)
-            seg_count = len(segments1) # get the length of segments for cycle 1
-            score.update_seg_count(seg_count) # send the length of of segments to Score class to update the segments created that is shown on the screen
+            _seg_count = len(segments1) # get the length of segments for cycle 1
+            score.update_seg_count(_seg_count) # send the length of of segments to Score class to update the segments created that is shown on the screen
                     
 
 
@@ -99,7 +80,6 @@ class HandleCollisionsAction(Action):
             segments1 = cycle1.get_segments()
             cycle2 = cast.get_first_actor("cycles2")
             segments2 = cycle2.get_segments()
-            # food = cast.get_first_actor("foods")
 
             x = int(constants.MAX_X / 2)
             y = int(constants.MAX_Y / 2)
@@ -117,4 +97,3 @@ class HandleCollisionsAction(Action):
                 segment.set_color(constants.WHITE)
             for segment in segments2:
                 segment.set_color(constants.WHITE)
-            # food.set_color(constants.WHITE)
