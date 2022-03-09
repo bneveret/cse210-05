@@ -57,7 +57,7 @@ class HandleCollisionsAction(Action):
         head1 = cycle1.get_segments()[0]
         segments = cycle1.get_segments()[1:]
         cycle2 = cast.get_first_actor("cycle2s")
-        head2 = cycle2.get_segments() [0]
+        head2 = cycle2.get_segments()[0]
         segments2 = cycle2.get_segmnts()[1:]
         
         for segment in segments:
