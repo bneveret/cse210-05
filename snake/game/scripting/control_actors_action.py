@@ -2,8 +2,11 @@ import constants
 from game.scripting.action import Action
 from game.shared.point import Point
 
+#import all needed info for sound
 import raylib
+#initialize audio device
 raylib.InitAudioDevice()
+#encode file to be read by raylib
 sound = raylib.LoadSound("snake\game\sounds\player_sound.wav".encode('ascii'))
 
 
@@ -40,6 +43,7 @@ class ControlActorsAction(Action):
         if self._keyboard_service.is_key_down('a'):
             self._direction = Point(-constants.CELL_SIZE, 0)
             cycle1.turn_head(self._direction)
+            #play sound
             raylib.PlaySound(sound)
         
         # right
@@ -52,12 +56,14 @@ class ControlActorsAction(Action):
         if self._keyboard_service.is_key_down('w'):
             self._direction = Point(0, -constants.CELL_SIZE)
             cycle1.turn_head(self._direction)
+            #play sound
             raylib.PlaySound(sound)
         
         # down
         if self._keyboard_service.is_key_down('s'):
             self._direction = Point(0, constants.CELL_SIZE)
             cycle1.turn_head(self._direction)
+            #play sound
             raylib.PlaySound(sound)
             
             
@@ -67,24 +73,28 @@ class ControlActorsAction(Action):
         if self._keyboard_service.is_key_down('j'):
             self._direction = Point(-constants.CELL_SIZE, 0)
             cycle2.turn_head(self._direction)
+            #play sound
             raylib.PlaySound(sound)
         
         # right
         if self._keyboard_service.is_key_down('l'):
             self._direction = Point(constants.CELL_SIZE, 0)
             cycle2.turn_head(self._direction)
+            #play sound
             raylib.PlaySound(sound)
         
         # up
         if self._keyboard_service.is_key_down('i'):
             self._direction = Point(0, -constants.CELL_SIZE)
             cycle2.turn_head(self._direction)
+            #play sound
             raylib.PlaySound(sound)
         
         # down
         if self._keyboard_service.is_key_down('k'):
             self._direction = Point(0, constants.CELL_SIZE)
             cycle2.turn_head(self._direction)
+            #play sound
             raylib.PlaySound(sound)
         
 
